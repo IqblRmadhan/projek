@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Materi 3 - Elemen Lanjutan dan Final Test</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Materi 3: Elemen Lanjutan HTML</h1>
+    <section id="material-content">
+        <p>Materi ini melanjutkan pembahasan elemen HTML dan diakhiri dengan evaluasi akhir untuk menyelesaikan semua materi.</p>
+        <ul>
+            <li>Belajar elemen HTML lanjutan dan penggunaannya.</li>
+            <li>Evaluasi akhir dengan dua soal untuk menyelesaikan materi HTML.</li>
+        </ul>
+    </section>
+    <section id="quiz-section">
+        <h2>Final Test</h2>
+        <div id="quiz-container"></div>
+        <button id="submitQuizBtn">Submit Jawaban</button>
+        <p id="quiz-result" style="font-weight:bold;"></p>
+    </section>
+    <button id="backProfileBtn">Kembali ke Profil</button>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+<script>
+document.getElementById('backProfileBtn').addEventListener('click', () => {
+    window.location.href = "profile.html";
+});
+
+// Render quiz for final test 
+document.addEventListener('DOMContentLoaded', () => {
+    initFirebase();
+    loadQuiz('materi3', 'quiz-container', 'quiz-result', 'quiz3', 'profile.html', true);
+});
+</script>
+</body>
+</html>
+

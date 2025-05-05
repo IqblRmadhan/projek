@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Materi 2 - Element Teks HTML</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Materi 2: Element Teks HTML</h1>
+    <section id="material-content">
+        <p>Materi ini menjelaskan elemen teks dalam HTML seperti paragraf, heading dan span.</p>
+        <ul>
+            <li>Tag <code>&lt;p&gt;</code> digunakan untuk paragraf.</li>
+            <li>Tag <code>&lt;h1&gt;</code> sampai <code>&lt;h6&gt;</code> digunakan sebagai heading.</li>
+            <li>Tag <code>&lt;span&gt;</code> digunakan untuk mengelompokkan teks tanpa membuat baris baru.</li>
+        </ul>
+    </section>
+    <section id="quiz-section">
+        <h2>Quiz Materi 2</h2>
+        <div id="quiz-container"></div>
+        <button id="submitQuizBtn">Submit Jawaban</button>
+        <p id="quiz-result" style="font-weight:bold;"></p>
+    </section>
+    <button id="backProfileBtn">Kembali ke Profil</button>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+<script>
+document.getElementById('backProfileBtn').addEventListener('click', () => {
+    window.location.href = "profile.html";
+});
+
+// Render quiz for materi2 
+document.addEventListener('DOMContentLoaded', () => {
+    initFirebase();
+    loadQuiz('materi2', 'quiz-container', 'quiz-result', 'quiz2', 'materi3.html');
+});
+</script>
+</body>
+</html>
+

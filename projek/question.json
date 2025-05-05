@@ -1,0 +1,81 @@
+{
+    "materi1": {
+      "title": "Pengenalan HTML",
+      "content": "Materi ini menjelaskan pengenalan HTML, atribut pada HTML, dan struktur HTML.",
+      "quizzes": [
+        {
+          "question": "Apa itu HTML?",
+          "options": [
+            "Hyper Text Markup Language",
+            "High Text Markup Language",
+            "Hyper Text Markup Link",
+            "Hyperlinks Text Mark Language"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Apa fungsi dari tag &lt;head&gt;?",
+          "options": [
+            "Menampung informasi meta",
+            "Menampilkan konten",
+            "Membuat link",
+            "Menampilkan gambar"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "materi2": {
+      "title": "Element Teks HTML",
+      "content": "Materi ini menjelaskan tentang elemen teks dalam HTML.",
+      "quizzes": [
+        {
+          "question": "Tag mana yang digunakan untuk paragraf?",
+          "options": ["&lt;p&gt;", "&lt;h1&gt;", "&lt;div&gt;", "&lt;span&gt;"],
+          "answer": 0
+        },
+        {
+          "question": "Tag mana yang digunakan untuk heading?",
+          "options": ["&lt;h1&gt;", "&lt;p&gt;", "&lt;span&gt;", "&lt;div&gt;"],
+          "answer": 0
+        }
+      ]
+    },
+    "materi3": {
+      "title": "Elemen Lanjutan HTML",
+      "content": "Materi ini melanjutkan pembahasan elemen HTML dan penggunaannya.",
+      "quizzes": [
+        {
+          "question": "Tag apa yang digunakan untuk membuat link?",
+          "options": ["&lt;a&gt;", "&lt;link&gt;", "&lt;div&gt;", "&lt;span&gt;"],
+          "answer": 0
+        },
+        {
+          "question": "Tag yang mana digunakan untuk menampilkan daftar tak berurutan?",
+          "options": ["&lt;ul&gt;", "&lt;ol&gt;", "&lt;li&gt;", "&lt;dl&gt;"],
+          "answer": 0
+        }
+      ]
+    },
+    "quizakhir": {
+      "title": "Evaluasi Akhir",
+      "content": "Evaluasi akhir untuk menyelesaikan materi HTML.",
+      "quizzes": [
+        {
+          "question": "HTML adalah singkatan dari?",
+          "options": [
+            "Hyper Text Markup Language",
+            "High Text Markup Language",
+            "Hydro Text Markup Language",
+            "Home Tool Markup Language"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Tag yang berfungsi untuk paragraf adalah?",
+          "options": ["&lt;p&gt;", "&lt;h1&gt;", "&lt;span&gt;", "&lt;div&gt;"],
+          "answer": 0
+        }
+      ]
+    }
+  }

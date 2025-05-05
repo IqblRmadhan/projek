@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Materi 1 - Pengenalan HTML</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Materi 1: Pengenalan HTML</h1>
+    <section id="material-content">
+        <p>Materi ini menjelaskan pengenalan HTML, atribut pada HTML, dan struktur HTML.</p>
+        <ul>
+            <li>Pengenalan HTML adalah bahasa markup untuk membuat halaman web.</li>
+            <li>Atribut pada HTML digunakan untuk memberikan informasi tambahan pada elemen.</li>
+            <li>Struktur HTML terdiri dari elemen-elemen seperti <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>.</li>
+        </ul>
+    </section>
+    <section id="quiz-section">
+        <h2>Quiz Materi 1</h2>
+        <div id="quiz-container"></div>
+        <button id="submitQuizBtn">Submit Jawaban</button>
+        <p id="quiz-result" style="font-weight:bold;"></p>
+    </section>
+    <button id="backProfileBtn">Kembali ke Profil</button>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+<script>
+document.getElementById('backProfileBtn').addEventListener('click', () => {
+    window.location.href = "profile.html";
+});
+
+// Render quiz for materi1 
+document.addEventListener('DOMContentLoaded', () => {
+    initFirebase();
+    loadQuiz('materi1', 'quiz-container', 'quiz-result', 'quiz1', 'materi2.html');
+});
+</script>
+</body>
+</html>
+
