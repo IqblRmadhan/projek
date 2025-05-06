@@ -1,44 +1,100 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Materi 1 - Pengenalan HTML</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Materi 1 - Pengenalan HTML</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.3/ace.js"></script>
+  <style>
+
+
+    #material-content {
+      display: flex;
+      height: 80vh;
+      border: 1px solid black;
+    }
+
+    #editor {
+      width: 50%;
+      height: 100%;
+    }
+
+    #preview {
+      width: 50%;
+      height: 100%;
+      border: none;
+      background-color: white;
+    }
+  </style>
 </head>
 <body>
-    <h1>Materi 1: Pengenalan HTML</h1>
+
+  <h1>Materi 1: Pengenalan HTML</h1>
+
+  <section id="quiz-section">
+    <h2>Quiz Materi 1</h2>
+    <p>Materi ini menjelaskan pengenalan HTML, atribut pada HTML, dan struktur HTML.</p>
+    <ul>
+      <li>Pengenalan HTML adalah bahasa markup untuk membuat halaman web.</li>
+      <li>Atribut pada HTML digunakan untuk memberikan informasi tambahan pada elemen.</li>
+      <li>Struktur HTML terdiri dari elemen-elemen seperti <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>.</li>
+    </ul>
     <section id="material-content">
-        <p>Materi ini menjelaskan pengenalan HTML, atribut pada HTML, dan struktur HTML.</p>
-        <ul>
-            <li>Pengenalan HTML adalah bahasa markup untuk membuat halaman web.</li>
-            <li>Atribut pada HTML digunakan untuk memberikan informasi tambahan pada elemen.</li>
-            <li>Struktur HTML terdiri dari elemen-elemen seperti <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>.</li>
-        </ul>
+        <div id="editor"></div>
+        <iframe id="preview"></iframe>
     </section>
-    <section id="quiz-section">
-        <h2>Quiz Materi 1</h2>
-        <div id="quiz-container"></div>
-        <button id="submitQuizBtn">Submit Jawaban</button>
-        <p id="quiz-result" style="font-weight:bold;"></p>
-    </section>
-    <button id="backProfileBtn">Kembali ke Profil</button>
 
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
-<script src="firebase-config.js"></script>
-<script src="script.js"></script>
-<script>
-document.getElementById('backProfileBtn').addEventListener('click', () => {
-    window.location.href = "profile.html";
-});
+    <div id="quiz-container"></div>
+    <button id="submitQuizBtn">Submit Jawaban</button>
+    <p id="quiz-result" style="font-weight: bold;"></p>
+  </section>
 
-// Render quiz for materi1 
-document.addEventListener('DOMContentLoaded', () => {
-    initFirebase();
-    loadQuiz('materi1', 'quiz-container', 'quiz-result', 'quiz1', 'materi2.html');
-});
-</script>
+  <button id="backProfileBtn">Kembali ke Profil</button>
+
+  <!-- Firebase + Script -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    const editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.session.setMode("ace/mode/html");
+    editor.renderer.setScrollMargin(10, 10, 10, 10);
+
+    editor.setValue(`<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contoh Struktur HTML</title>
+  </head>
+  <body>
+    <h1>Selamat Datang</h1>
+    <p>Ini adalah paragraf pertama dalam halaman HTML.</p>
+  </body>
+</html>`, -1); // -1 untuk mengatur kursor di baris pertama
+
+    function updatePreview() {
+      const code = editor.getValue();
+      const iframe = document.getElementById("preview");
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      doc.open();
+      doc.write(code);
+      doc.close();
+    }
+
+    // Update saat editor berubah
+    editor.session.on('change', updatePreview);
+    updatePreview(); // Pertama kali
+
+    document.getElementById('backProfileBtn').addEventListener('click', () => {
+      window.location.href = "profile.html";
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initFirebase();
+      loadQuiz('materi1', 'quiz-container', 'quiz-result', 'quiz1', 'materi2.html');
+    });
+  </script>
 </body>
 </html>
-
