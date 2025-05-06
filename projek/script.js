@@ -115,16 +115,16 @@ async function loadQuiz(materiKey, quizContainerId, resultId, progressKey, nextP
 
     try {
         const response = await fetch('question.json');
-        if (!response.ok) {
+        /*if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        }*/
         const questionsData = await response.json();
 
-        if (!questionsData[materiKey]) {
+        /*if (!questionsData[materiKey]) {
             quizContainer.innerHTML = '<p>Materi tidak ditemukan.</p>';
             submitBtn.style.display = 'none';
             return;
-        }
+       }*/ 
 
         const materi = questionsData[materiKey];
         const quizzes = materi.quizzes;
